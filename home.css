@@ -4,7 +4,8 @@ body{
 /* header */
 .position{
     /* position:fixed; */
-    padding-bottom:-1.5rem;
+    /* margin-bottom: -1%; */
+    padding-bottom: -1.5rem;
 }
 .top{
     /* border:2px solid red; */
@@ -111,7 +112,7 @@ body{
 
 /* couserl */
 .crous{
-    margin-top:1%;
+    margin-top:-1%;
     height: 300px;
     width: 100%;
 }

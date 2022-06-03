@@ -126,6 +126,9 @@ body{
  display: inline-block; 
   
 }
+.float{
+    float: left;
+}
 /* deals */
 .deals{
     align-content: center;
@@ -135,9 +138,40 @@ body{
 .drop{
     margin-left: 3%;
 }
-.deals2{
+.width1{
+    width: 81%;
+    min-width: 978px;
+    max-width: 1680px;
+}
+.filt{
+    width:17%;
+    /* border:2px solid black; */
+    float: left;
+    margin-left: 2%;
+}
+.ftext{
     margin-bottom: 2%;
 }
+.ftext>span{
+    font-size: 20px;
+}
+.head{
+    font-style: bold;
+    margin-top: 2%;
+}
+.range{
+    margin-top: 4%;
+}
+.range :hover{
+    font-weight: 500;
+    color: aquamarine;
+    font-size: 20px;
+}
+.deals2{
+    margin-bottom: 2%;
+    
+}
+
 
 .o90{
     font-size: 30px;
@@ -152,28 +186,27 @@ body{
     margin-left: 2%;
     margin-bottom: -3%;
 }
-.i38{
-    float: left;
-    margin-left: 4.5%;
-}
+
 .i36{
     float: left;
-    margin-left: 2.5%;
-    /* margin-bottom: 2%; */
+    margin-left: 2%;
+    margin-top: 2%;
     
 }
 .i37{
-    margin-top: 0%;
+    float: left;
+    margin-left: 2%;
+    margin-top: 2%;
 }
 .i37>img{
-    height: 70px;
+    height: 60px;
     margin-top: 53%;
 }
 .i39{
    height: 237px;
 }
 .i39>img{
-    height: 200px;
+    height: 150px;
 }
 .t4{
     font-size: 12px;
