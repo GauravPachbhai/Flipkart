@@ -14,6 +14,13 @@ body{
     
     
 }
+.j98{
+    float: right;
+    height: 33px;
+    width: 102px;
+    margin-right: 10%;
+    font-size: 14px;
+}
 
 .colors {
     color: #fff;
@@ -26,7 +33,7 @@ body{
 .explor{
     display: inline block;
     /* border:2px solid red; */
-    margin-left:60% ;
+    margin-left:49% ;
 }
 .y76{
     margin-top:-18%;
@@ -93,8 +100,8 @@ body{
     color: #fff;
     font-size: 35px;
     float: left;
-    margin-left: 2%; 
-     margin-right: 5%;
+    /* margin-left: 2%;  */
+     margin-right: 2%;
    
 }
  .mybtn4{
