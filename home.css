@@ -181,22 +181,28 @@ body{
     color: white
   }
  /* copan */
- #copan{
+ .copan{
     margin-top: -66%;
     margin-left: 30%;
     z-index: 100;
-    height: 41%;
+    height: 45%;
     width: 38%;
     position: absolute;
-    border: 2px groove;
+    border: 5px groove;
+    border-radius: 12rem;
  }
  .cimg{
     height: 100%;
     width: 100%;
  }
  .cbtn{
-    position:absolute;
+    position: absolute;
     z-index: 100;
-    float:left;
+    margin-top: 1%;
+    margin-left: 95%;
+    float: right;
+    background-color: rgb(18 5 5);
+    border-radius: 25%;
+    color: #ffffffd1;
  }
 
