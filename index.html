@@ -14,7 +14,7 @@
   <script src="home.js"></script>
 </head>
 
-<body >
+<body>
   <!-- header -->
   <div id="main">
     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-12 position">
@@ -58,6 +58,51 @@
                       d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
                   </svg></button>
 
+              </div>
+              <div class="loc">
+                <button class="locbtn" onclick="geolocation()" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-sun-fill" viewBox="0 0 16 16">
+                  <path d="M11.473 11a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5h-.027z"/>
+                  <path d="M10.5 1.5a.5.5 0 0 0-1 0v1a.5.5 0 0 0 1 0v-1zm3.743 1.964a.5.5 0 1 0-.707-.707l-.708.707a.5.5 0 0 0 .708.708l.707-.708zm-7.779-.707a.5.5 0 0 0-.707.707l.707.708a.5.5 0 1 0 .708-.708l-.708-.707zm1.734 3.374a2 2 0 1 1 3.296 2.198c.199.281.372.582.516.898a3 3 0 1 0-4.84-3.225c.352.011.696.055 1.028.129zm4.484 4.074c.6.215 1.125.59 1.522 1.072a.5.5 0 0 0 .039-.742l-.707-.707a.5.5 0 0 0-.854.377zM14.5 6.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>
+                </svg></button>
+                <div class="tem">
+                  <p id="out"></p>
+                  <p id="location"></p>
+                  <p id="weather"></p>
+                  
+                </div>
+
+                <script>
+                  let x = document.getElementById('out')
+                  let y = document.getElementById('weather');
+                  let z = document.getElementById('location');
+
+                  function geolocation() {
+                    if (navigator.geolocation) {
+                      navigator.geolocation.getCurrentPosition(showPosition)
+                    } else {
+                      x.innerText = "Geo Not Supported";
+                    }
+                  }
+
+                  function showPosition(data) {
+                    console.log(data)
+                    let lat = data.coords.latitude;
+                    let long = data.coords.longitude;
+                    // x.innerText = `Lat is ${lat} & long is ${long}`;
+                    const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${long}&mode=json&units=metric&cnt=5&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
+                    //api calling
+                    fetch(url, { method: 'GET' })
+                      //return promise
+                      .then((res) => res.json())
+                      // resolve the promise
+                      .then((data) => {
+                        y.innerText = `${data.city.name} 
+                                      ${data.list[0].temp.day} °C`;
+                        z.innerText = ``;
+                      })
+
+                  }
+                </script>
               </div>
             </div>
           </nav>
@@ -190,7 +235,8 @@
     <!-- footer -->
     <div class="container width fill display">
       <div class="rc34">
-        <div class=" r67">ABOUT</div><hr>
+        <div class=" r67">ABOUT</div>
+        <hr>
         <a href="/helpcentre?otracker=undefined_footer_navlinks" class="e96 ">Contact Us</a>
         <a href="/helpcentre?otracker=undefined_footer_navlinks" class="e96 ">About Us</a>
         <a href="/helpcentre?otracker=undefined_footer_navlinks" class="e96 ">Career</a>
@@ -199,7 +245,8 @@
       </div>
 
       <div class="rc34">
-        <div class=" r67">POLICY</div><hr>
+        <div class=" r67">POLICY</div>
+        <hr>
         <a href="/helpcentre?otracker=undefined_footer_navlinks" class="e96 ">Terms & Use</a>
         <a href="/helpcentre?otracker=undefined_footer_navlinks" class="e96 ">Security</a>
         <a href="/helpcentre?otracker=undefined_footer_navlinks" class="e96 ">Privacy</a>
@@ -208,7 +255,8 @@
       </div>
 
       <div class="rc34">
-        <div class=" r67">HELP</div><hr>
+        <div class=" r67">HELP</div>
+        <hr>
         <a href="/helpcentre?otracker=undefined_footer_navlinks" class="e96 ">Payment</a>
         <a href="/helpcentre?otracker=undefined_footer_navlinks" class="e96 ">Shipping</a>
         <a href="/helpcentre?otracker=undefined_footer_navlinks" class="e96 ">Cancell & Return</a>
@@ -217,7 +265,8 @@
       </div>
 
       <div class="rc34">
-        <div class=" r67">SOCIAL</div><hr>
+        <div class=" r67">SOCIAL</div>
+        <hr>
         <a href="/helpcentre?otracker=undefined_footer_navlinks" class="e96 ">Facebook</a>
         <a href="/helpcentre?otracker=undefined_footer_navlinks" class="e96 ">Twitter</a>
         <a href="/helpcentre?otracker=undefined_footer_navlinks" class="e96 ">Youtube</a>
@@ -225,7 +274,8 @@
       </div>
 
       <div class="rc34">
-        <div class=" r67">About us</div><hr>
+        <div class=" r67">About us</div>
+        <hr>
         <a href="/helpcentre?otracker=undefined_footer_navlinks" class="e96 ">Contact Us</a>
         <a href="/helpcentre?otracker=undefined_footer_navlinks" class="e96 ">About Us</a>
         <a href="/helpcentre?otracker=undefined_footer_navlinks" class="e96 ">Career</a>
@@ -233,11 +283,11 @@
         <a href="/helpcentre?otracker=undefined_footer_navlinks" class="e96 ">Press</a>
       </div>
     </div>
-  </div >
+  </div>
   <div id="copan" class="copan">
     <div><button onclick="closCopan()" id="cbtn" class="cbtn">X</button></div>
-    
-    <div><img onmouseover= "hbtn()"  class="cimg"
+
+    <div><img onmouseover="hbtn()" class="cimg"
         src="https://assets.mspimages.in/wp-content/uploads/2022/09/Flipkart-Big-Billion-Days-Sale-2022-2.jpg"
         alt="image"></div>
 

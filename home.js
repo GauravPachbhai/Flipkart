@@ -14,3 +14,5 @@ function hbtn() {
     document.getElementById('cbtn').style.opacity = '1';
 }
 
+// geolocatio and wether
+

@@ -119,6 +119,28 @@ body{
     font-size: 20px;
    
 }
+.loc{
+    background-color: #377ef0;
+    margin-left: -3%;
+    height: 66px;
+    width: 50px;
+}
+    
+.locbtn{
+    border-color:#377ef0;  
+    background-color: #377ef0; 
+    height: 39px;
+    width: 34px;
+    border-radius: 62%;
+    color: #dcee0a;
+    margin-top: -12%;
+}
+.tem{
+    margin-top: -37%;
+    font-size: 15px;
+    font-weight: 600;
+    color: azure;
+}
 
 /* couserl */
 .crous{
